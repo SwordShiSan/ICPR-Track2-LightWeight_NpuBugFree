@@ -15,13 +15,13 @@ def parse_args():
 
 
     # data and pre-process
-    parser.add_argument('--dataset', type=str, default='NUDT-SIRST',
+    parser.add_argument('--dataset', type=str, default='ICPR_Track2',
                         help='dataset name:  NUDT-SIRST, NUAA-SIRST, NUST-SIRST')
     parser.add_argument('--mode', type=str, default='TXT', help='mode name:  TXT, Ratio')
     parser.add_argument('--test_size', type=float, default='0.5', help='when mode==Ratio')
-    parser.add_argument('--root', type=str, default='dataset/')
+    parser.add_argument('--root', type=str, default='/data6/lailihao/projects/ICPR-Track2-LightWeight_NpuBugFree/dataset')
     parser.add_argument('--suffix', type=str, default='.png')
-    parser.add_argument('--split_method', type=str, default='50_50',
+    parser.add_argument('--split_method', type=str, default='70_20',
                         help='50_50, 10000_100(for NUST-SIRST)')
     parser.add_argument('--workers', type=int, default=4,
                         metavar='N', help='dataloader threads')
@@ -33,14 +33,14 @@ def parse_args():
                         help='crop image size')
 
     #  hyper params for training
-    parser.add_argument('--epochs', type=int, default=1500, metavar='N',
+    parser.add_argument('--epochs', type=int, default=500, metavar='N',
                         help='number of epochs to train (default: 110)')
     parser.add_argument('--start_epoch', type=int, default=0,
                         metavar='N', help='start epochs (default:0)')
-    parser.add_argument('--train_batch_size', type=int, default=4,
+    parser.add_argument('--train_batch_size', type=int, default=16,
                         metavar='N', help='input batch size for \
                         training (default: 16)')
-    parser.add_argument('--test_batch_size', type=int, default=4,
+    parser.add_argument('--test_batch_size', type=int, default=16,
                         metavar='N', help='input batch size for \
                         testing (default: 32)')
     parser.add_argument('--min_lr', default=1e-5,

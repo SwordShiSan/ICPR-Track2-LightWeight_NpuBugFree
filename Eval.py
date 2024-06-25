@@ -5,11 +5,11 @@ Fbase = 12.56         #基线的运算量 GFlops The FLOPs for the baseline
 
 
 # 输入模型测试得到的评价指标 Input evaluation indicators obtained from model testing
-Fa = 1.5e-5 #虚警率 False alarm rate
-Pd = 0.59   #检测率 Detection rate
-IoU = 0.62  #平均交并比 average intersection over union
-Params = 0.9 #模型参数量 M Parameters of your model (Unit: M)
-Flops = 5.08 #模型运算量 GFlops of your model
+Fa = 1.8e-5 #虚警率 False alarm rate
+Pd = 0.627   #检测率 Detection rate
+IoU = 0.614  #平均交并比 average intersection over union
+Params = 4.7 #模型参数量 M Parameters of your model (Unit: M)
+Flops = 57.13 #模型运算量 GFlops of your model
 
 
 #评分 Score
@@ -28,3 +28,20 @@ Spe = (Sp + Se) *0.5
 print("IoU: {:.2f}, Fa: {}, Pd: {:.2f}, Sp: {}".format(IoU, Fa, Pd, Sp))
 print("Params: {:.1f}M , FLOPs: {:.2f}GFlops, Se: {}".format(Params, Flops, Se))
 print("Spe: ",format(Spe))
+
+'''
+DNANet:
+moiu:  0.6147957341293724
+FA:  [1.80435181e-05 5.11169434e-06 2.01416016e-06 6.79016113e-07
+ 7.62939453e-08 1.52587891e-08 0.00000000e+00 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]
+PD:  [6.27598297e-01 4.26245930e-01 1.91835712e-01 9.21612822e-02
+ 2.37916354e-02 2.75482094e-03 2.50438267e-04 0.00000000e+00
+ 0.00000000e+00 0.00000000e+00 0.00000000e+00]
+Params: 4.696888M
+FLOPs: 57.128745GFLOPs
+sp=0.62
+se=-2.33
+score=-0.855
+Params和FLops过大，se分数太低
+'''

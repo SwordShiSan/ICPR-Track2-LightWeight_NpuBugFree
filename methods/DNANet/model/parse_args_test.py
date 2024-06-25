@@ -16,20 +16,20 @@ def parse_args():
 
 
     # data and pre-process
-    parser.add_argument('--dataset', type=str, default='NUDT-SIRST',
+    parser.add_argument('--dataset', type=str, default='ICPR_Track2',
                         help='dataset name: NUDT-SIRST, NUAA-SIRST, NUST-SIRST')
-    parser.add_argument('--st_model', type=str, default='NUDT-SIRST_DNANet_31_07_2021_14_50_57_wDS',
+    parser.add_argument('--st_model', type=str, default='ICPR_Track2_DNANet_21_06_2024_17_23_55_wDS',
                         help='NUDT-SIRST_DNANet_31_07_2021_14_50_57_wDS,'
                              'NUAA-SIRST_DNANet_28_07_2021_05_21_33_wDS')
     parser.add_argument('--model_dir', type=str,
-                        default = 'NUDT-SIRST_DNANet_31_07_2021_14_50_57_wDS/mIoU__DNANet_NUDT-SIRST_epoch.pth.tar',
+                        default = 'ICPR_Track2_DNANet_21_06_2024_17_23_55_wDS/mIoU__DNANet_ICPR_Track2_epoch.pth.tar',
                         help    = 'NUDT-SIRST_DNANet_31_07_2021_14_50_57_wDS/mIoU__DNANet_NUDT-SIRST_epoch.pth.tar,'
                                   'NUAA-SIRST_DNANet_28_07_2021_05_21_33_wDS/mIoU__DNANet_NUAA-SIRST_epoch.pth.tar')
     parser.add_argument('--mode', type=str, default='TXT', help='mode name:  TXT, Ratio')
     parser.add_argument('--test_size', type=float, default='0.5', help='when --mode==Ratio')
-    parser.add_argument('--root', type=str, default='dataset/')
+    parser.add_argument('--root', type=str, default='/data6/lailihao/projects/ICPR-Track2-LightWeight_NpuBugFree/dataset')
     parser.add_argument('--suffix', type=str, default='.png')
-    parser.add_argument('--split_method', type=str, default='50_50',
+    parser.add_argument('--split_method', type=str, default='70_20',
                         help='50_50, 10000_100(for NUST-SIRST)')
     parser.add_argument('--workers', type=int, default=4,
                         metavar='N', help='dataloader threads')
