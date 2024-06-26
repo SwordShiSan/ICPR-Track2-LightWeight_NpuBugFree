@@ -27,7 +27,7 @@ def parse_args():
     parser.add_argument('--mode', type=str, default='TXT', help='mode name:  TXT, Ratio')
     parser.add_argument('--lr_mode', type=str, default='fixed_lr', help='lr_mode name:  adjusted_lr, fixed_lr')
     parser.add_argument('--test_size', type=float, default='0.5', help='when mode==Ratio')
-    parser.add_argument('--root', type=str, default='./dataset')
+    parser.add_argument('--root', type=str, default='./dataset/')
     parser.add_argument('--suffix', type=str, default='.png')
     parser.add_argument('--split_method', type=str, default='70_20',
                         help='70_20')
@@ -36,13 +36,13 @@ def parse_args():
     parser.add_argument('--in_channels', type=int, default=3,
                         help='in_channel=3 for pre-process')
     parser.add_argument('--base_size', type=int, default=512,
-                        help='base image size')
+                        help='base image size ori 512')
     parser.add_argument('--crop_size', type=int, default=512,
-                        help='crop image size')
+                        help='crop image size ori 512')
 
 
     #  hyper params for training
-    parser.add_argument('--epochs', type=int, default=500, metavar='N',
+    parser.add_argument('--epochs', type=int, default=250, metavar='N',
                         help='number of epochs to train (default: 110)')
     parser.add_argument('--start_epoch', type=int, default=0,
                         metavar='N', help='start epochs (default:0)')
